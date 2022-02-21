@@ -1,70 +1,29 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Make sure you have installed all the required packages and libraries using "npm install" before you start.
+2. This application is created by "create-react-app" so be sure to start app by running "npm start"
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+This is a small country book application created by React.js. Datasource was sourced from "https://restcountries.com/v3/all", You can see all the country in the list in alphabetical order and you can click each country to get detail information. You can also search country with keyword, and you can get result that contains the keyword you input.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Assumptions
+1. There are two pages as asked in challenge instruction. Root page is country list page and "/countryname" is country detail page
+2. Antd can handle large amount of data and do auto-pagination. For the reason that the given API can only return all country data, I try to splice the datasets into array of 10 elements to simulate that I got different data based on pagesize and total of data. (For example, the given data is like '[country1, country2, .....]', I splice it like '[[country1, country2, ..., country10], [country11, country12, ...., country20],...]').
+3. For searching country, I return the data that contains users' keyword. (For example, if users' keyword is 'al', 'New Zealand' will be returned)
+4. For country detail page, I took the eng.f as my demonym info. (TBH I dont really know the difference between 'f' and 'm').
+5. Users can click 'undo search' button to reset the country list and go back to page 1
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Resources
+1. React.js (staging tool is 'create-react-app')
+2. antd(UI component library for responsive and delicate design)
+3. Axios for ajax API calling
+4. react-router-dom for react route
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Thank you for your opportunity!
