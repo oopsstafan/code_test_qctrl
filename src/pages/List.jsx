@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Card, Table, Input, Form } from 'antd'
 import { reqCountryList } from '../api/index'
+import { ClipLoader } from 'react-spinners'
 
 
 export default function List() {
@@ -25,6 +26,7 @@ export default function List() {
             dataIndex: 'country',
             key: 'country',
             render: (country) => {
+                
                 const detailPath = `/${country}`
                 return (
                     <Link to={detailPath}>{country}</Link>
@@ -43,7 +45,6 @@ export default function List() {
         let resultArr = []
         //using async/await to get requied data from API
         let result = await reqCountryList()
-        console.log(result)
         //pull out the country name of the array for the purpose of order it in alphabetical order
         result = result.data.map((item) => {
             return item.name.common
@@ -108,7 +109,7 @@ export default function List() {
             <span>Search Country by Keyword</span><br/>
             <Button type="secondary" onClick={handleReset}>Undo Search</Button>
         </div>}
-            loading={loading}
+            // loading={loading}
             extra={<Form
                 name="searchCountry"
                 layout="inline"
@@ -145,9 +146,11 @@ export default function List() {
                     //get current store in hook
                     current
                 }}
+                style={{display: loading? 'none': ''}}
             >
 
             </Table>
+            <ClipLoader color="#1890FF" loading={loading} style={{margin: '0 auto'}} size={50}/>
         </Card>
     );
 }
